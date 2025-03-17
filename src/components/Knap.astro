@@ -1,0 +1,15 @@
+---
+export interface Props {
+  text: string;
+  href: string;
+  variant: "index" | "program"; // Define possible variants
+}
+
+const { text, href, variant } = Astro.props;
+---
+
+<a href={href} class={`cta-button cta-${variant}`}>
+  {text}
+</a>
+
+

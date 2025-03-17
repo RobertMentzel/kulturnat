@@ -2,4 +2,40 @@
   --blue: #87b9c5;
   --brown: #47382c;
   --yellow: #efe5b5;
+  --transparent: transparent;
+}
+
+/* Default Button Styling */
+.cta-button {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Variants */
+.cta-index {
+  background-color: var(--transparent);
+  color: var(--brown);
+  border-color: var(--brown);
+}
+
+.cta-index:hover {
+  background-color: var(--brown);
+  color: var(--blue);
+  border-color: var(--transparent);
+}
+
+.cta-program {
+  background-color: var(--transparent);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.cta-program:hover {
+  background-color: var(--blue);
+  color: var(--brown);
+  border-color: var(--transparent);
 }
