@@ -9,7 +9,7 @@ import "../styles/generel.css";
         <source src="/src/video.mp4" type="video/mp4">
         </video>
         <div class="hero-text">
-            <h1>HELSINGØR <br> KULTURNAT</h1>
+            <h1>HELSINGØR <span class="lille-text"><br> KULTURNAT</span></h1>
         </div>
 
     </div>
@@ -35,23 +35,35 @@ import "../styles/generel.css";
     object-fit: cover; 
     transform: translateX(-50%);
 }
-.hero-text {
+.hero-text h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 1.3rem;
-    letter-spacing: 0.2em;
+    font-size: 70px;
 line-height: 3rem;
     z-index: 1;
     color: var(--yellow);
+}
+.lille-text {
+    font-size: 45px;
+    letter-spacing: 0.1em;
+    line-height: 1.5rem;
 }
 @media (min-width: 800px) {
     .hero-video {
         object-fit: cover; /* Dækker hele skærmen uden sorte kanter */
         width: 100vw;
         height: 100vh;
+    }
+    .hero-text h1 {
+        font-size: 128px;
+        line-height: 6rem;
+    }
+    .lille-text {
+        font-size: 96px;
+      
     }
 }
 </style>
