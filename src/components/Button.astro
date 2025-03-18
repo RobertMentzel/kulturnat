@@ -1,0 +1,50 @@
+---
+const {style, text, linkTo}=Astro.props;
+---
+
+<a class={style}href={linkTo}>{text}</a>
+
+
+<style>
+     a {
+        padding: 1rem 2rem;
+        font-family: "Golos Text", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .brown {
+        border: var(--yellow) solid 1px;
+        color: var(--yellow);
+      }
+
+      .brown:hover {
+        background-color: var(--yellow);
+        color: var(--brown);
+        border: none;
+      }
+      .blue {
+        border: var(--brown) solid 1px;
+        color: var(--brown);
+      }
+
+      .blue:hover {
+        background-color: var(--brown);
+        color: var(--blue);
+      }
+
+      .yellow {
+        border: var(--brown) solid 1px;
+        color: var(--brown);
+      }
+
+      .yellow:hover{
+        background-color: var(--brown);
+        color: var(--yellow);
+      }
+
+
+
+</style>

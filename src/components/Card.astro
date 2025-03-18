@@ -1,0 +1,30 @@
+---
+import Button from "./Button.astro"
+---
+
+<article>
+<img src="" alt="placeholder">
+<h3 class="divider">Eventets navn</h3>
+<p>20:00 - 21:00</p>
+<p class="padding-bottom">Lokation</p>
+<Button text="LÆS MERE" linkTo="www.dr.dk" style="brown"></Button>
+</article>
+
+
+<style>
+    .divider{
+        border-bottom: var(--yellow) solid 1px;
+        padding-bottom: 10px;
+    }
+    article{
+        padding: 2rem;
+    }
+
+    p, h3{
+        color: var(--yellow);
+    }
+    .padding-bottom{
+        padding-bottom: 1.5rem;
+    }
+   
+</style>
