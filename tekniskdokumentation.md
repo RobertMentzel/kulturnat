@@ -62,21 +62,6 @@ Men med components, så SKAL de åbenbart have Stort første bogstav.
 - Skal filer have korte forklaringer som kommentarer?
   Egentlig ikke. Det håber vi på, ikke behøves. Og hvis vi til sidst ikke forstår hinandens kode, så kan vi bruge chatGPT til at give kommentare til koden. Ellers forklare vi det til hinanden.
 
-# Funktionalitet
-
-Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websitet. Tænk over hvilke interaktioner brugeren kan foretage på sitet? Eller hvordan websitet håndterer og præsenterer data? Eksempler på funktionalitet, der kan beskrives:
-
-- Hentning af events fra API.
-  Vi bruger ikke et API i dette Tema
-- Filtrering af events baseret på brugerens valg.
-  Vi har tydelige filtrerings knapper, som fører brugeren ned til det rette sted på siden.
-- Dynamisk visning af events i HTML.
-  Ingen dynamisk visning, fordi vi ikke henter data fra API i dette tema.
-
-Brug korte beskrivelser, som i eksemplerne herover
-
-# Astro komponenter og Layout
-
 # Dokumentation af props, slots og layouts
 
 Dette afsnit skal beskrive, hvordan vi selv har tænkt os at bruge Astro værktøjerne.
