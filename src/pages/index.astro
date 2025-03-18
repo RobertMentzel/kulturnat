@@ -1,6 +1,58 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import "../styles/generel.css";
+
 ---
 <Layout>
-    <h1>Her er voerskrifte</h1>
+  
+    <div class="hero-container">
+        <video class="hero-video" autoplay muted loop playsinline> 
+        <source src="/src/video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-text">
+            <h1>HELSINGØR <br> KULTURNAT</h1>
+        </div>
+
+    </div>
+  
 </Layout>
+
+<style>
+
+.hero-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transform: translateX(-50%);
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+line-height: 3rem;
+    z-index: 1;
+    color: var(--yellow);
+}
+@media (min-width: 800px) {
+    .hero-video {
+        object-fit: cover; /* Dækker hele skærmen uden sorte kanter */
+        width: 100vw;
+        height: 100vh;
+    }
+}
+</style>
