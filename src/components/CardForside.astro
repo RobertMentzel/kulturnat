@@ -1,0 +1,10 @@
+---
+const { image, text, link } = Astro.props;
+
+---
+
+<a href={link} class="link-forside">
+    <img src={`/assets/${image}`} alt={text} />
+    <span class="tekst-knap-forside">{text}</span>
+</a>
+
