@@ -75,30 +75,63 @@ Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websit
 
 Brug korte beskrivelser, som i eksemplerne herover
 
-# API endpoints
+# Astro komponenter og Layout
 
-Dette afsnit skal liste de endpoints fra API'et i har benyttet:
+# Dokumentation af props, slots og layouts
 
-- (fx. https://dummyjson.com/products)
+Dette afsnit skal beskrive, hvordan vi selv har tænkt os at bruge Astro værktøjerne.
 
-intet brug af API
+- Slots: Hvornår kan man bruge slots, og hvad er det?
+  Man kan bruge <slot /> inde i et component, som skal holde andre komponenter. For eksempel, hvis man har et <Card/> komponent, som skal ligge inde i en <Cardsamling/> komponent, så kan man indsætte <Cardsamling/> komponentet på en .astro side, og ligge så mange <Card/> komponenter ind under <Cardsamling/> komponentet på samme page, hvis man altså har lagt et <slot /> tag ind under et grid i <Cardsamling/> komponentet, så kan man style det, som man vil inde i <Cardsamling/>, og det ville så ændre layoutet af <Card/> komponenterne, fordi man satte en <slot /> ind i <Cardsamling/> komponentets grid. Det er en måde, hvor man kan sætte komponenterne ind direkte i en page og bare nøjes med at sætte <slot /> ind på <Cardsamling/>.
 
-# Dokumentation af Funktion
+- Komponenter: Beskriv, hvordan i laver komponenter og bruger dem på jeres pages.
+  Vi laver et komponent i components mappen, som kan kan hedde Button.astro, og herinde bruger vi astro.props oppe i toppen, hvor vi har et indelukket javascript kode, og der skriver vi konstanterne op, som vi skal bruge til vores element. Vores element er et <a> tag, som vi bruger som en knap til at link til at anden side ligesom en CTA, og den får så en klasse, hvor vi putter en tilhørende konstant på, så den kan ændres afhængig, hvilken variant af knappen det skal være, så får den en konstant på sit href, så det kan skiftes afhængig, hvilken kanp skal linke til hvilken side. Sidst får den også en konstant, som skal repræsentere det tekst, der skal stå som indhold på <a> tagget.
+  Neden under dette element, så bruger vi <style> tags til at lave al css'en for knappen og alle de forskellige variant klasser, som kan puttes på valgfrit afhængig af, hvor på hjemmesiden knappen skal være.
+  Til sidst importeres <Button /> komponentet ind på den page, den skal være på, og der kan sættes så mange knapper ind, som man vil, og det er så her man kan ændre indholdet på konstanternes plads, så knapperne er forskellige. Derudover kan man sætte de forskellige <style> klasser på, så det netop har forskellige farver og :hover transitions.
 
-Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
-
-- Beskrivelse: Hvad gør funktionen? Hvordan spiller den sammen med resten af koden?
-- Parametre: Hvilke input forventes (fx en værdi fra en dropdown eller URL'en)?
-- Returnerer: Beskriv, om funktionen returnerer en værdi eller blot manipulerer DOM’en.
-- Eksempel på brug: Indsæt funktions-koden herunder(der hvor koden er i eksemplet) og vis, hvordan funktionen kaldes:
+- Eksempel på brug: Vis et eksempel på, hvor der bruges
 
 ```javascript
-//funktionens kode:
-function voresFunktion(sprog) {
-  console.log(`${sprog} syntax highlighting`);
-}
-//hvordan funktionen kaldes:
-voresFunktion("JavaScript");
+//konstanter til knap inde i Button.astro komponentet:
+---
+const {style, text, linkTo}=Astro.props;
+---
 ```
 
-Vi har ikke kodet endnu.
+```javascript
+//elementet a med constanterne tilføjet, style-konstanten er der hvor vi tilføjer farve-klasserne i vores <style>
+```
+
+```astro
+<a class={style}href={linkTo}>{text}</a>
+```
+
+---css
+
+<style>
+      .brown {
+        border: var(--yellow) solid 1px;
+        color: var(--yellow);
+      }
+
+      .brown:hover {
+        background-color: var(--yellow);
+        color: var(--brown);
+        border: none;
+      }
+</style>
+
+---
+
+````javascript
+//her importeres Button componentet inde i Program1.astro.astro komponentet:
+import Button from "../components/Button.astro"
+
+
+
+
+//herunder indsættes componentet i program1.astro og de rette konstanter og klasser er lagt på
+---
+```astro
+<Button text="MUSIK" linkTo="#musik" style="brown"></Button>
+````
